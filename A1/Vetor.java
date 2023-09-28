@@ -2,51 +2,43 @@
 public class Vetor {
 	
 	private int[] vetorNum;
+	private int tamVetor;
 	
-	public Vetor() {
-		
+	public Vetor(int tamVetor) {
+		this.tamVetor = tamVetor;
 	}
 	
-	public void printVetor() {
+	public void printVetor(int[] vetor) {
 		System.out.println("Vetor de Números: ");
-		for (int i=0; i <vetorNum.length; i++) {
+		for (int i=0; i <vetor.length; i++) {
 			
 			// printa os valores do array
-			System.out.print(vetorNum[i]+" ");
+			System.out.print(vetor[i]+" ");
 			if ((i+1)%10 == 0) {
 				System.out.println("\n");
 			}
 			
 		}
 	}
-	
-	
-	
-	
-	
 
 	// popula de forma padrão com um Array de 100 itens que vão de 0 a 100; 
-	public void popularVetor() {
-		int tamArray = 100;
+	public void popularVetor(int[] vetor) {
 		int valorMin = 0;
 		int valorMax = 100;
 		
-		vetorNum = new int[tamArray];
-		
-		for (int i=0; i <tamArray; i++) {
+		for (int i=0; i <tamVetor; i++) {
 			int valor = (int)Math.floor(Math.random() * (valorMax - valorMin + 1) + valorMin);
-			vetorNum[i] = valor;
+			vetor[i] = valor;
 		}
 	}	
 	
 	// popula de forma customizada o vetor
-	public void popularVetor(int tamArray, int valorMin, int valorMax) {
+	public void popularVetor(int[] vetor, int valorMin, int valorMax) {
 
-		vetorNum = new int[tamArray];
 		
-		for (int i=0; i <tamArray; i++) {
+		for (int i=0; i <tamVetor; i++) {
 			int valor = (int)Math.floor(Math.random() * (valorMax - valorMin + 1) + valorMin);
-			vetorNum[i] = valor;
+			vetor[i] = valor;
 		}
 	}
 	
