@@ -21,7 +21,7 @@ public class Media extends Thread{
 		}
 		
 		media = total/tamVetor;
-		System.out.println("\nMédia: "+media);
+		System.out.println("Média: "+media);
 		
 	}
 }

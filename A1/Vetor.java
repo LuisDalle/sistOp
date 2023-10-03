@@ -8,8 +8,8 @@ public class Vetor {
 		this.tamVetor = tamVetor;
 	}
 	
+	// printa o vetor
 	public void printVetor(int[] vetor) {
-		System.out.println("Vetor de Números: ");
 		for (int i=0; i <vetor.length; i++) {
 			
 			// printa os valores do array
@@ -20,8 +20,25 @@ public class Vetor {
 			
 		}
 	}
+	
+	// organiza o vetor em ordem crescente
+	public int[] organizaVetor(int[] vetor) {
+		// INSERTION SORT
+		int n = vetor.length;
+        for (int i = 1; i < n; ++i) {
+            int key = vetor[i];
+            int j = i - 1;
+ 
+            while (j >= 0 && vetor[j] > key) {
+                vetor[j + 1] = vetor[j];
+                j = j - 1;
+            }
+            vetor[j + 1] = key;
+        }
+        return vetor;
+	}
 
-	// popula de forma padrão com um Array de 100 itens que vão de 0 a 100; 
+	// popula de forma padrão com um Array que vai de 0 a 100; 
 	public void popularVetor(int[] vetor) {
 		int valorMin = 0;
 		int valorMax = 100;
@@ -34,7 +51,6 @@ public class Vetor {
 	
 	// popula de forma customizada o vetor
 	public void popularVetor(int[] vetor, int valorMin, int valorMax) {
-
 		
 		for (int i=0; i <tamVetor; i++) {
 			int valor = (int)Math.floor(Math.random() * (valorMax - valorMin + 1) + valorMin);
